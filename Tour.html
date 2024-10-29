@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YucAventuraTour</title>
+    <style>
+        body {
+            font-family: serif, monospace;
+            background-color: #4bc22e;
+            color: #63c046;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #a3ce3e;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            display: none;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Organiza tu viaje feliz y despreocupado</h1>
+
+    <nav>
+        <ul>
+            <li><a onclick="showSection('inicio')">Inicio</a></li>
+            <li><a onclick="showSection('reservas')">Reservas</a></li>
+            <li><a onclick="showSection('hoteles')">Hoteles</a></li>
+            <li><a onclick="showSection('guias')">Guías</a></li>
+            <li><a onclick="showSection('contacto')">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <div id="inicio" class="section" style="display: block;">
+        <h2>Bienvenido a YucAventuraTour</h2>
+        <p>Encuentra los mejores destinos turísticos, hospedaje y guías para tu próxima aventura.</p>
+    </div>
+
+    <div id="reservas" class="section">
+        <h2>Reservas</h2>
+        <p>Aquí puedes hacer tus reservas para los mejores destinos turísticos.</p>
+    </div>
+
+    <div id="hoteles" class="section">
+        <h2>Hoteles Recomendados</h2>
+        <p>Aquí puedes encontrar una lista de hoteles recomendados para tu estancia en cada destino. Desde lujosos resorts hasta acogedoras posadas, hay opciones para todos los gustos y presupuestos.</p>
+        <ul>
+            <li>Hotel Machu Picchu</li>
+            <li>Oberoi Amarvilas (Taj Mahal)</li>
+            <li>Wembley Stadium Hotel</li>
+        </ul>
+    </div>
+
+    <div id="guias" class="section">
+        <h2>Guías Turísticas</h2>
+        <p>Contrata guías expertos que te ayudarán a explorar los destinos más fascinantes. Con su conocimiento, podrás descubrir la historia y cultura que cada lugar tiene para ofrecer.</p>
+    </div>
+
+    <div id="contacto" class="section">
+        <h2>Contáctanos</h2>
+        <form action="enviar_contacto.php" method="post">
+            <p>Nombre: <input type="text" name="nombre" required></p>
+            <p>Email: <input type="email" name="email" required></p>
+            <p>Mensaje: <textarea name="mensaje" rows="4" required></textarea></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
